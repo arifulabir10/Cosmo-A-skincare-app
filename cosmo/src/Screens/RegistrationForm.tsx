@@ -15,7 +15,6 @@ const RegistrationForm: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    // Add your registration logic here (e.g., submitting the data to a backend server).
     console.log("Form submitted:", formData);
   };
 

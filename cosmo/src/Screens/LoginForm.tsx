@@ -12,7 +12,6 @@ const LoginForm: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    // Add your login logic here (e.g., validating the data and logging in the user).
     console.log("Form submitted:", formData);
   };
 

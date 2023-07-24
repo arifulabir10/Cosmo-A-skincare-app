@@ -9,7 +9,6 @@ const ForgetPasswordForm: React.FC = () => {
   };
 
   const handleSubmit = () => {
-    // Add your password recovery logic here (e.g., sending a recovery email).
     console.log("Form submitted. Email:", email);
   };
 
