@@ -1,12 +1,68 @@
-import { View, Text } from "react-native";
-import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
+import React, { useState } from "react";
+import ProductImage from "../../Images/Products/primer.jpg";
 
 const ProductDescription = () => {
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleExpansion = () => {
+    setExpanded(!expanded);
+  };
+
   return (
-    <View>
-      <Text>ProductDescription</Text>
-    </View>
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        <Image style={styles.image} source={ProductImage} />
+        <Text style={styles.heading}>Product Name</Text>
+        {expanded && (
+          <View style={styles.expandedInfo}>
+            <Text>Product Description</Text>
+            <Text>How to Use</Text>
+            <Text>Ingredients</Text>
+          </View>
+        )}
+        <TouchableOpacity style={styles.arrowButton} onPress={toggleExpansion}>
+          <Text>{expanded ? "▲" : "▼"}</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  image: {
+    height: "70%",
+    width: "100%",
+    resizeMode: "contain",
+  },
+  heading: {
+    fontSize: 30,
+    fontWeight: "bold",
+    marginTop: 10,
+  },
+  expandedInfo: {
+    marginTop: 10,
+    paddingHorizontal: 20,
+    paddingBottom: 20,
+  },
+  arrowButton: {
+    marginTop: 10,
+  },
+});
 
 export default ProductDescription;
