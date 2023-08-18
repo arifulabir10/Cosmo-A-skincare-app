@@ -1,16 +1,17 @@
 import React from "react";
-import { View } from "react-native";
-import RegistrationForm from "cosmosrcScreensRegistrationForm.tsx";
-import LoginForm from "cosmosrcScreensLoginForm.tsx";
-import ForgetPasswordForm from "cosmosrcScreensForgetPasswordForm.tsx";
+import { View, Text, SafeAreaView } from "react-native";
+import RegistrationForm from "./src/Screens/RegistrationForm";
+import LoginForm from "./src/Screens/LoginForm.tsx";
+import ForgetPasswordForm from "./src/Screens/ForgetPasswordForm.tsx";
+import ProductDescription from "./src/Screens/ProductDescription";
 
 const App: React.FC = () => {
   return (
-    <View>
-      <RegistrationForm />
-      <LoginForm />
-      <ForgetPasswordForm />
-    </View>
+    <SafeAreaView>
+      <View>
+        <ProductDescription />
+      </View>
+    </SafeAreaView>
   );
 };
 
