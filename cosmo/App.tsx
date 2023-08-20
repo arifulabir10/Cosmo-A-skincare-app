@@ -1,17 +1,79 @@
 import React from "react";
-import { View } from "react-native";
-import RegistrationForm from "cosmosrcScreensRegistrationForm.tsx";
-import LoginForm from "cosmosrcScreensLoginForm.tsx";
-import ForgetPasswordForm from "cosmosrcScreensForgetPasswordForm.tsx";
 
-const App: React.FC = () => {
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import Login from "./src/Screen/Login"
+import { createStackNavigator } from "@react-navigation/stack";
+
+const stack = createStackNavigator();
+
+export default function App() {
   return (
+    
     <View>
-      <RegistrationForm />
-      <LoginForm />
-      <ForgetPasswordForm />
+      <Login/>
     </View>
-  );
-};
+    
+  )
+}
 
-export default App;
+
+
+
+// import React, { useState } from 'react';
+// import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+
+// const LoginScreen: React.FC = () => {
+//   const [username, setUsername] = useState('');
+//   const [password, setPassword] = useState('');
+
+//   const handleLogin = () => {
+//     // Perform authentication logic here
+//     // For simplicity, let's just log the credentials
+//     console.log('Username:', username);
+//     console.log('Password:', password);
+//   };
+
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.header}>Login</Text>
+//       <TextInput
+//         placeholder="Username"
+//         value={username}
+//         onChangeText={setUsername}
+//         style={styles.input}
+//       />
+//       <TextInput
+//         placeholder="Password"
+//         value={password}
+//         onChangeText={setPassword}
+//         secureTextEntry
+//         style={styles.input}
+//       />
+//       <Button title="Login" onPress={handleLogin} />
+//     </View>
+//   );
+// };
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     padding: 20,
+//   },
+//   header: {
+//     fontSize: 24,
+//     marginBottom: 20,
+//   },
+//   input: {
+//     width: '100%',
+//     padding: 10,
+//     marginBottom: 10,
+//     borderWidth: 1,
+//     borderColor: '#ccc',
+//     borderRadius: 5,
+//   },
+// });
+
+// export default LoginScreen;
