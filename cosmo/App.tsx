@@ -3,6 +3,7 @@ import React from "react";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from "./src/Screen/Login"
+import PasswordResetPage from "./src/Screen/PasswordResetPage";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const stack = createStackNavigator();
@@ -11,7 +12,7 @@ export default function App() {
   return (
     
     <View>
-      <Login/>
+      <PasswordResetPage/>
     </View>
     
   )

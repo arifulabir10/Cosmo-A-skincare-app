@@ -4,10 +4,19 @@ import BackgroundImage from "../assets/public/icons/back.png";
 
 
 
+
+
+
+
  const login=()=>{
     const [email,setEmail]= useState('')
     const [password,setPassword]= useState('')
+    const [nameInput,setNameInput]= useState('')
 
+    const handleNameInput = (nameInput:string) =>{
+        console.log(nameInput)
+       //setEmail(emailInput)
+   }
     const handleEmailInput = (emailInput:string) =>{
          console.log(emailInput)
         //setEmail(emailInput)
@@ -28,6 +37,13 @@ import BackgroundImage from "../assets/public/icons/back.png";
                 <Text> Log into Your Account </Text>
               </View>
               <View style={styles.input}>
+              <TextInput
+                  value={nameInput}
+                  placeholder="User Name"
+                  onChangeText={handleNameInput}
+                  style={styles.inputStyles}
+                  
+                />
                 <TextInput
                   value={email}
                   placeholder="Enter your email"
@@ -43,17 +59,15 @@ import BackgroundImage from "../assets/public/icons/back.png";
                   secureTextEntry={true} // Use secureTextEntry for password fields
                   
                 />
-                <Text>Forget Password?</Text>
               </View>
               <View style={styles.button}>
-                <Button title="Login" />
+                <Button title="Sign Up" />
               </View>
             </View>
           </SafeAreaView>
         </ImageBackground>
       );
       
-    
 
  }
 
