@@ -8,9 +8,9 @@ import HomePage from "./src/Screens/HomePage";
 const App = () => {
   return (
     <View>
-      <HomePage />
+      {/* <HomePage /> */}
       {/* <Text>Hello everyone</Text> */}
-      {/* <ProductDescription /> */}
+      <ProductDescription />
       {/* <RegistrationForm /> */}
     </View>
   );
