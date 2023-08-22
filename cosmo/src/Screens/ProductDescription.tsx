@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -6,8 +7,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from "react-native";
-import React, { useState } from "react";
-import ProductImage from "../../Images/Products/primer.jpg";
+import ProductImage from "../../Images/Products/something.jpg"; // Update the import path based on your project structure
 
 const ProductDescription = () => {
   const [expanded, setExpanded] = useState(false);
