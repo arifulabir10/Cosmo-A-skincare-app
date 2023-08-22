@@ -7,7 +7,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from "react-native";
-import ProductImage from "../../Images/Products/something.jpg"; // Update the import path based on your project structure
+import ProductImage from "../../Images/Products/primer.jpg"; // Update the import path based on your project structure
 
 const ProductDescription = () => {
   const [expanded, setExpanded] = useState(false);
