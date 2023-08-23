@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
-import ProductImage from "../../Images/Products/primer.jpg";
+import ProductImage from "../../Images/Products/banana.jpg";
 import { Dimensions } from "react-native";
 import { ImageBackground } from "react-native";
 
@@ -22,47 +22,63 @@ const ProductDescription = () => {
 
   return (
     <SafeAreaView>
-      <View style={styles.mainContainer}>
-        <View style={styles.imagePortion}>
-          <ImageBackground source={ProductImage} style={styles.imageView} />
-        </View>
-        <ScrollView style={styles.textPortion}>
-          <View style={styles.cartIconContainer}>
-            <TouchableOpacity onPress={() => console.log("Cart icon pressed")}>
-              <Icon name="shopping-cart" size={35} color="purple" />
+      <ScrollView>
+        <View style={styles.mainContainer}>
+          <View style={styles.imagePortion}>
+            <ImageBackground source={ProductImage} style={styles.imageView} />
+          </View>
+          <View style={styles.textPortion}>
+            <View style={styles.cartIconContainer}>
+              <TouchableOpacity
+                onPress={() => console.log("Cart icon pressed")}
+              >
+                <Icon name="shopping-cart" size={35} color="purple" />
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.categoryName}>Serum & Essence</Text>
+            <View style={styles.ratingContainer}>
+              {/* Custom star rating */}
+              <View style={styles.starContainer}>
+                <Icon name="star" size={20} color="gold" />
+                <Icon name="star" size={20} color="gold" />
+                <Icon name="star" size={20} color="gold" />
+                <Icon name="star" size={20} color="black" />
+                <Icon name="star" size={20} color="black" />
+              </View>
+            </View>
+            <Text style={styles.productName}>
+              Cos De BAHA Azelaic Acid 10% Serum - 30ml
+            </Text>
+            <Text style={styles.price}>৳ 350.00</Text>
+            <TouchableOpacity
+              style={styles.arrowButton}
+              onPress={toggleExpansion}
+            >
+              <Icon
+                name={isExpanded ? "arrow-up" : "arrow-down"}
+                size={30}
+                color="black"
+              />
             </TouchableOpacity>
           </View>
-          <Text style={styles.categoryName}>Serum & Essence</Text>
-          <Text style={styles.productName}>
-            Cos De BAHA Azelaic Acid 10% Serum - 30ml
-          </Text>
-          <Text style={styles.price}>৳ 50.00</Text>
-          <TouchableOpacity
-            style={styles.arrowButton}
-            onPress={toggleExpansion}
-          >
-            <Icon
-              name={isExpanded ? "arrow-up" : "arrow-down"}
-              size={30}
-              color="black"
-            />
-          </TouchableOpacity>
-        </ScrollView>
-      </View>
-      {isExpanded && (
-        <ScrollView style={styles.expandedView}>
-          <Text style={styles.expandedText}>
-            Introducing the Cos De BAHA Azelaic Acid 10% Serum, a potent
-            skincare solution meticulously formulated with 10% Azelaic Acid as
-            its active ingredient. Derived from natural sources such as barley,
-            wheat, and rye, Azelaic Acid takes center stage in addressing an
-            array of skin concerns, from acne to hyperpigmentation. Unveil a
-            revitalized and brightened complexion with this serum's targeted
-            approach.
-          </Text>
-          <Text>Additional information can go here.</Text>
-        </ScrollView>
-      )}
+          {isExpanded && (
+            <View style={styles.expandedView}>
+              <ScrollView style={styles.expandedTextScroll}>
+                <Text style={styles.expandedText}>
+                  Introducing the Cos De BAHA Azelaic Acid 10% Serum, a potent
+                  skincare solution meticulously formulated with 10% Azelaic
+                  Acid as its active ingredient. Derived from natural sources
+                  such as barley, wheat, and rye, Azelaic Acid takes center
+                  stage in addressing an array of skin concerns, from acne to
+                  hyperpigmentation. Unveil a revitalized and brightened
+                  complexion with this serum's targeted approach.
+                </Text>
+                <Text>Additional information can go here.</Text>
+              </ScrollView>
+            </View>
+          )}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -79,17 +95,17 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "70%",
     overflow: "hidden",
-    backgroundColor: "orange",
+    backgroundColor: "white",
   },
   imageView: {
     marginTop: 30,
     width: "100%",
     height: "100%",
+    borderRadius: 15,
   },
   textPortion: {
-    flex: 1,
     backgroundColor: "white",
-    borderRadius: 15,
+    borderRadius: 25,
     padding: 10,
     marginLeft: 10,
     marginRight: 10,
@@ -127,13 +143,23 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginBottom: 10,
     backgroundColor: "white",
-    padding: 10,
     borderRadius: 5,
     borderWidth: 1,
     borderColor: "black",
   },
+  expandedTextScroll: {
+    maxHeight: deviceHeight * 0.6, // 60% of screen height
+  },
   expandedText: {
     fontSize: 24,
+  },
+  ratingContainer: {
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  starContainer: {
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
 

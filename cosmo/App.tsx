@@ -5,13 +5,15 @@ import RegistrationForm from "./src/Screens/RegistrationForm";
 // import ForgetPasswordForm from "./src/Screens/ForgetPasswordForm.tsx";
 import ProductDescription from "./src/Screens/ProductDescription";
 import HomePage from "./src/Screens/HomePage";
+import CreateProduct from "./src/CRUD/CreateProduct";
 const App = () => {
   return (
     <View>
       {/* <HomePage /> */}
       {/* <Text>Hello everyone</Text> */}
-      <ProductDescription />
+      {/* <ProductDescription /> */}
       {/* <RegistrationForm /> */}
+      <CreateProduct />
     </View>
   );
 };
