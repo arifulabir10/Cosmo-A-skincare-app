@@ -2,18 +2,26 @@ import React from "react";
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Login from "./src/Screen/Login"
-import PasswordResetPage from "./src/Screen/PasswordResetPage";
+import Home from "./src/Screens/home"
+import LoginForm from "./src/Screens/LoginForm"
+import Registration from "./src/Screens/RegistrationForm"
+import PasswordResetPage from "./src/Screens/PasswordResetPage";
 import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from "@react-navigation/native";
 
 const stack = createStackNavigator();
 
 export default function App() {
   return (
     
-    <View>
-      <PasswordResetPage/>
-    </View>
+    <NavigationContainer>
+      <stack.Navigator initialRouteName="Home">
+        <stack.Screen name="Home" component={Home} />
+        <stack.Screen name="LoginForm" component={LoginForm} />
+        <stack.Screen name="Registration" component={Registration} />
+        <stack.Screen name="PasswordReset" component={PasswordResetPage} />
+      </stack.Navigator>
+    </NavigationContainer>
     
   )
 }
