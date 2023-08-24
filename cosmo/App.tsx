@@ -6,6 +6,8 @@ import RegistrationForm from "./src/Screens/RegistrationForm";
 import ProductDescription from "./src/Screens/ProductDescription";
 import HomePage from "./src/Screens/HomePage";
 import CreateProduct from "./src/CRUD/CreateProduct";
+import DocumentFile from "./src/DocumentFile";
+
 const App = () => {
   return (
     <View>
@@ -14,6 +16,7 @@ const App = () => {
       {/* <ProductDescription /> */}
       {/* <RegistrationForm /> */}
       <CreateProduct />
+      {/* <DocumentFile /> */}
     </View>
   );
 };
