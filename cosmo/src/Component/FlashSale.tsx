@@ -1,6 +1,14 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 import React from "react";
 import { ScrollView } from "react-native";
+
+export interface CosmoProducts {
+  product_id: number;
+  product_name: string;
+  product_category: string;
+  product_description: string;
+  price: number;
+}
 
 const FlashSale = () => {
   const cosmetics = [
@@ -42,59 +50,45 @@ const FlashSale = () => {
   ];
 
   return (
-    <View>
-      {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-      {cosmetics.map((item, index) => (
-          <View key={index}>
+    <ScrollView style={styles.container}>
+      <FlatList
+        contentContainerStyle={styles.scrollViewContent}
+        data={cosmetics}
+        numColumns={2}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.itemContainer}>
             <Image source={{ uri: item.image }} style={styles.images} />
-            <Text style={styles.imageName}>{item.name}</Text>
+            <View style={styles.textContainer}>
+              <Text style={styles.imageName}>{item.name}</Text>
+            </View>
           </View>
-        ))}
-      </ScrollView>
-
-      
-     </View> */}
-
-      <View style={styles.container}>
-        <Text style={styles.heading}>All the products will be here!!!</Text>
-        <View style={styles.card}>
-          <ScrollView contentContainerStyle={styles.scrollViewContent}>
-            {cosmetics.map((item, index) => (
-              <View key={index} style={styles.itemContainer}>
-                <Image source={{ uri: item.image }} style={styles.images} />
-                <Text style={styles.imageName}>{item.name}</Text>
-              </View>
-            ))}
-          </ScrollView>
-        </View>
-      </View>
-    </View>
+        )}
+      />
+    </ScrollView>
   );
 };
 
-export default FlashSale;
-
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "whitesmoke",
+    padding: 10,
+  },
   heading: {
-    margin: 10,
     fontSize: 22,
     fontWeight: "bold",
-  },
-  container: {
-    backgroundColor: "grey",
-  },
-  card: {
-    backgroundColor: "F5F5F5",
+    marginBottom: 10,
   },
   scrollViewContent: {
-    flexDirection: "row",
-    flexWrap: "wrap",
+    flexDirection: "column",
     justifyContent: "space-between",
-    paddingHorizontal: 10,
   },
   itemContainer: {
-    width: "48%",
-    marginBottom: 20,
+    width: "45%",
+    margin: 5,
+    backgroundColor: "white",
+    borderRadius: 5,
+    overflow: "hidden",
   },
   images: {
     width: "100%",
@@ -102,9 +96,14 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     borderRadius: 5,
   },
+  textContainer: {
+    padding: 10,
+  },
   imageName: {
     marginTop: 5,
     fontSize: 16,
     textAlign: "center",
   },
 });
+
+export default FlashSale;

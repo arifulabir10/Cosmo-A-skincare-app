@@ -7,11 +7,13 @@ import ProductDescription from "./src/Screens/ProductDescription";
 import HomeScreen from "./src/Screens/HomeScreen";
 import CreateProduct from "./src/CRUD/CreateProduct";
 import DocumentFile from "./src/DocumentFile";
+import ProductFromAPI from "./src/Component/ProductFromAPI";
 
 const App = () => {
   return (
     <View>
-      <HomeScreen />
+      {/* <HomeScreen /> */}
+      <ProductFromAPI />
       {/* <Text>Hello everyone</Text> */}
       {/* <ProductDescription /> */}
       {/* <RegistrationForm /> */}

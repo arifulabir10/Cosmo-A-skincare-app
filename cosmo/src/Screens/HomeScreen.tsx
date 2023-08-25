@@ -7,6 +7,7 @@ import {
   Dimensions,
   TextInput,
 } from "react-native";
+import { FontAwesome5 } from "@expo/vector-icons";
 import Imageslider from "../Component/Imageslider";
 import Products from "../Component/Products";
 import FlashSale from "../Component/FlashSale";
@@ -18,6 +19,7 @@ const Searchbar = () => {
   return (
     <SafeAreaView>
       <View style={styles.mainContainer}>
+        <FontAwesome5 name="grip-lines" size={24} color="black" />
         <TextInput placeholder="Search in Cosmo" style={styles.searchInput} />
         <Ionicons name="md-search-sharp" size={30} color="purple " />
       </View>
