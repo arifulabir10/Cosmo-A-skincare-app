@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     borderColor: "black",
   },
   expandedTextScroll: {
-    maxHeight: deviceHeight * 0.6, // 60% of screen height
+    maxHeight: deviceHeight * 0.6,
   },
   expandedText: {
     fontSize: 24,

@@ -4,18 +4,18 @@ import RegistrationForm from "./src/Screens/RegistrationForm";
 // import LoginForm from "./src/Screens/LoginForm.tsx";
 // import ForgetPasswordForm from "./src/Screens/ForgetPasswordForm.tsx";
 import ProductDescription from "./src/Screens/ProductDescription";
-import HomePage from "./src/Screens/HomePage";
+import Searchbar from "./src/Screens/Searchbar";
 import CreateProduct from "./src/CRUD/CreateProduct";
 import DocumentFile from "./src/DocumentFile";
 
 const App = () => {
   return (
     <View>
-      {/* <HomePage /> */}
+      <Searchbar />
       {/* <Text>Hello everyone</Text> */}
       {/* <ProductDescription /> */}
       {/* <RegistrationForm /> */}
-      <CreateProduct />
+      {/* <CreateProduct /> */}
       {/* <DocumentFile /> */}
     </View>
   );
