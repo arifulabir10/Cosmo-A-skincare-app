@@ -20,7 +20,7 @@ const LoginForm: React.FC = (props: any) => {
   };
 
   const handleSubmit = () => {
-    console.log("Form submitted:", formData);
+    props.navigation.navigate("WishList");
   };
 
   
