@@ -15,7 +15,7 @@ const Home = (props: any) => {
 
   return (
     <ImageBackground
-      source={require("../../assets/public/icons/images.jpg")} // Replace with the actual image path
+      source={require("../../assets/public/icons/images.jpg")} 
       style={styles.backgroundImage}
     >
     <View style={styles.container}>

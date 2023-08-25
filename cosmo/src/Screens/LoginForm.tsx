@@ -20,14 +20,15 @@ const LoginForm: React.FC = (props: any) => {
   };
 
   const handleSubmit = () => {
-    props.navigation.navigate("WishList");
+     props.navigation.navigate("WishList");
+    //  props.navigation.navigate("HomeScreen");
   };
 
   
 
   return (
     <ImageBackground
-      source={require("../../assets/public/icons/images.jpg")} // Replace with the actual image path
+      source={require("../../assets/public/icons/images.jpg")} 
       style={styles.backgroundImage}
     >
     <View style={styles.mainContainer}>
@@ -67,7 +68,7 @@ const LoginForm: React.FC = (props: any) => {
 const styles=StyleSheet.create({
   backgroundImage: {
        flex: 1,
-      resizeMode: "cover", // or "stretch" or "contain"
+      resizeMode: "cover", 
       // justifyContent: "center",
        alignItems: "center",
     },
@@ -88,7 +89,7 @@ const styles=StyleSheet.create({
       fontSize: 20,
       
       fontWeight: 'bold',
-      top: 220
+      top: 120
   },
   title:{
     fontSize: 30,
@@ -102,15 +103,15 @@ const styles=StyleSheet.create({
   start:{
       alignItems:"flex-start",
       
-      top: 255,
+      top: 155,
       left: -40
 
   },
   input:{
-      top: 280
+      top: 180
   },
   button:{
-      top: 320,
+      top: 250,
       width: 100,
       Radius: 20
       

@@ -6,17 +6,40 @@ const WishlistScreen = () => {
   const wishlistData = [
     {
       id: 1,
-      title: "Product 1",
+      title: "Face Wash",
       price: "$19.99",
-      image: require("../../assets/public/icons/images.jpg"),
+      image: require("../../assets/public/icons/1.jpg"),
     },
     {
       id: 2,
-      title: "Product 2",
+      title: "LipStick",
       price: "$29.99",
-      image: require("../../assets/public/icons/images.jpg"),
+      image: require("../../assets/public/icons/2.jpg"),
     },
-    // Add more wishlist items...
+    {
+      id: 3,
+      title: "NightCream",
+      price: "$29.99",
+      image: require("../../assets/public/icons/3.jpg"),
+    },
+    {
+      id: 4,
+      title: "SunCream",
+      price: "$29.99",
+      image: require("../../assets/public/icons/4.jpg"),
+    },
+    {
+      id: 5,
+      title: "Eyeliner",
+      price: "$29.99",
+      image: require("../../assets/public/icons/5.jpg"),
+    },
+    {
+      id: 6,
+      title: "Hair Color",
+      price: "$29.99",
+      image: require("../../assets/public/icons/6.jpg"),
+    },
   ];
 
   return (

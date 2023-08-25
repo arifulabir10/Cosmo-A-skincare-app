@@ -1,24 +1,29 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet, ImageBackground } from "react-native";
 
-const PasswordResetPage = () => {
+const PasswordResetPage = (props: any) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState(""); // Feedback message for the user
+  const navigation = useNavigation();
+
+  const handleLogin = () => {
+    props.navigation.navigate("LoginForm");
+  };
 
   const handleEmailInput = (input:string) => {
     setEmail(input);
   };
 
   const handleResetPassword = () => {
-    // Implement your password reset logic here
-    //sendPasswordResetEmail(email).then(() => setMessage("Password reset email sent."));
-    // Handle error cases as well
-    setMessage("Message is sent Form submitted. Email:")
+    
+    setMessage("Go back to Login Page",);
+    //props.navigation.navigate("ChangePassword");
   };
 
   return (
     <ImageBackground
-      source={require("../../assets/public/icons/images.jpg")} // Replace with the actual image path
+      source={require("../../assets/public/icons/images.jpg")} 
       style={styles.backgroundImage}
     >
     <View style={styles.container}>
@@ -40,7 +45,7 @@ const PasswordResetPage = () => {
 const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
-   resizeMode: "cover", // or "stretch" or "contain"
+   resizeMode: "cover", 
    // justifyContent: "center",
     alignItems: "center",
  },
@@ -65,7 +70,7 @@ const styles = StyleSheet.create({
   },
   message: {
     marginBottom: 16,
-    color: "green", // You can use different colors for success and error messages
+    color: "blue", 
   },
   input: {
     width: 250,
