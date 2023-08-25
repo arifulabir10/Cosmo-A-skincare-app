@@ -7,8 +7,12 @@ import {
   Dimensions,
   TextInput,
 } from "react-native";
+import Imageslider from "../Component/Imageslider";
+import Products from "../Component/Products";
+import FlashSale from "../Component/FlashSale";
+import { Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import HomePage from "../Component/HomePage";
+import SortProduct from "../Component/SortProduct";
 
 const Searchbar = () => {
   return (
@@ -17,7 +21,11 @@ const Searchbar = () => {
         <TextInput placeholder="Search in Cosmo" style={styles.searchInput} />
         <Ionicons name="md-search-sharp" size={30} color="purple " />
       </View>
-      <HomePage />
+      <Imageslider />
+      <Products />
+      <Text style={styles.heading}>FlashSale</Text>
+      <SortProduct />
+      <FlashSale />
     </SafeAreaView>
   );
 };
@@ -39,5 +47,11 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     fontSize: 18,
+  },
+  heading: {
+    margin: 10,
+    height: 40,
+    fontSize: 22,
+    fontWeight: "bold",
   },
 });
