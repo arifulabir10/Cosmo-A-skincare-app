@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
-import ProductImage from "../../Images/Products/banana.jpg";
+import ProductImage from "../../Images/Products/primer.jpg";
 import { Dimensions } from "react-native";
 import { ImageBackground } from "react-native";
 

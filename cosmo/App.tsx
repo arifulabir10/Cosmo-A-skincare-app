@@ -12,8 +12,8 @@ import ProductFromAPI from "./src/Component/ProductFromAPI";
 const App = () => {
   return (
     <View>
-      {/* <HomeScreen /> */}
-      <ProductFromAPI />
+      <HomeScreen />
+      {/* <ProductFromAPI /> */}
       {/* <Text>Hello everyone</Text> */}
       {/* <ProductDescription /> */}
       {/* <RegistrationForm /> */}
